@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    volumes:
+      - ./:/app
+    ports:
+      - "${PORT}:${PORT}" # Reference the PORT environment variable"
+    environment:
+      - NODE_ENV=${NODE_ENV} # Reference the NODE_ENV environment variable
